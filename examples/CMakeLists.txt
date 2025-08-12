@@ -93,3 +93,20 @@ endif()
 #target_link_libraries(
 #  visualization_dsl TaskflowDSL tf::default_settings
 #)
+
+cmake_minimum_required(VERSION 3.16)
+project(reach_matrix_example)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 添加可执行文件
+add_executable(reach_matrix_example reach_matrix_example.cpp)
+
+# 设置包含目录
+target_include_directories(reach_matrix_example PRIVATE 
+    ${CMAKE_SOURCE_DIR}/taskflow/include
+)
+
+# 如果需要链接其他库，可以在这里添加
+# target_link_libraries(reach_matrix_example PRIVATE some_library)
